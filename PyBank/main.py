@@ -35,7 +35,7 @@ with open(budget_csv, 'r') as csvfile:
     
     next(budget_data)  
     
-    change = 0
+    change = int(next(budget_data)[1])
     for row in budget_data:
         
         months2.append(row[0])   
@@ -74,19 +74,19 @@ with open(budget_csv, 'r') as csvfile:
 
 with open(os.path.join("PyBank/Analysis", "main.txt"), 'w') as file:
    
-    file.write(f'Financial Analysis')
+    file.write(f'Financial Analysis \n')
 
-    file.write(f'----------------------------------')
+    file.write(f'---------------------------------- \n')
 
-    file.write(f'Total Months: ' + str(tot_months))
+    file.write(f'Total Months: ' + str(tot_months) + '\n')
 
-    file.write(f'Total: $' + str(tot_proflos))
+    file.write(f'Total: $' + str(tot_proflos) + '\n')
 
-    file.write(f'Average Change: $' + str(ave_proflos_change))
+    file.write(f'Average Change: $' + str(ave_proflos_change) + '\n')
 
-    file.write(f'Greatest Increase in Profits: {key} (${value})')
+    file.write(f'Greatest Increase in Profits:' + str({key}) + '$' + str({value}) + '\n')
 
-    file.write(f'Greatest Decrease in Profits: {key} (${value})')
+    file.write(f'Greatest Decrease in Profits:' + str({key}) + '$' + str({value}) + '\n')
 
 
 
