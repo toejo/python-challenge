@@ -12,6 +12,8 @@ with open(os.path.join('PyPoll/Analysis', 'main.txt'), 'w') as file:
     print(f'--------------------------')
 
 
+    #def  
+
 
     #Lines 17-32 are for retrieving "Total Votes"
     with open(filepath, 'r') as csvfile:
@@ -32,36 +34,60 @@ with open(os.path.join('PyPoll/Analysis', 'main.txt'), 'w') as file:
         file.write(f'-------------------------- \n')
 
 
+
     with open(filepath, 'r') as csvfile:
         poll_csv = csv.reader(csvfile, delimiter = ',')
 
         next(poll_csv)
 
         cand = []
-        
-        #for each row of the csv file...
+    
         for row in poll_csv:
 
-            #idea 1: if row, column 2 is not the same as row, column 2 then put that value
-            #into the variable 'candidate'. we then build a list 'candidates' with the
-            #different value.  
-            # if row[2] != row[2]:
-                
-            #     candidate = row[2]
-
-            #     candidates.append(candidate)
-
-            #     candidate = " "
-
-            #idea 2: make a list, turn into set, then find unique values
             cand.append(row[2])
-            #print(len(cand)) -- returned the right value
         
-        candidates = set(cand)
-        print(candidates)
+        candids = set(cand)
+        candidates = list(candids)
+
+        candidate1 = (candidates[0])
+        candidate2 = (candidates[1])
+        candidate3 = (candidates[2])
+
+    with open(filepath, 'r') as csvfile:
+        poll_csv = csv.reader(csvfile, delimiter = ',')
+        
+        next(poll_csv)
+
+        vote_cand1 = []
+        vote_cand2 = []
+        vote_cand3 = []
+
+        for row in poll_csv:
+
+            if row[2] == candidate1:
+                vote_cand1.append(row[0])
+            elif row[2] == candidate2:
+                vote_cand2.append(row[0])
+            else:
+                vote_cand3.append(row[0])
+        
+        
+
+        print(candidate1 + ':' )
+        print(candidate2 + ':')
+        print(candidate3 + ':')
+        print(f'--------------------------')
+
+
+
+
+      
+       
+                
+
             
-            #still not working. do i need to remove the extra empty row at the end?
-            #it worked... creepily?
+            
+        
         
         
 
