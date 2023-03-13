@@ -56,10 +56,12 @@ with open(os.path.join('PyPoll/Analysis', 'main.txt'), 'w') as file:
             #idea 2: make a list, turn into set, then find unique values
             cand.append(row[2])
             #print(len(cand)) -- returned the right value
-            candidates = set(cand)
-            print(candidates)
-            
         
+        candidates = set(cand)
+        print(candidates)
+            
+            #still not working. do i need to remove the extra empty row at the end?
+            #it worked... creepily?
         
         
 

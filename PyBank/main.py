@@ -1,20 +1,26 @@
+#import the modules
 import os
 import csv
 
+#set the path
 budget_csv = os.path.join('PyBank', 'Resources', 'budget_data.csv')
 
+#declare variables ahead
 months = []
 months2 = []
 proflos = []
 proflos_change = []
 
-
+#create and write into a text file in the "Analysis" folder
 with open(os.path.join("PyBank/Analysis", "main.txt"), 'w') as file:
     
+    #lines 18-22 are for setting the header, and for printing into terminal and writing into 'main.txt'
     file.write(f'Financial Analysis \n')
-
+    print('Financial Analysis')
     file.write(f'---------------------------------- \n')
+    print('----------------------------------')
 
+    #lines 22 - 41 are for finding total months and profit/loss total, then printing into terminal
     with open(budget_csv, 'r') as csvfile:
         budget_data = csv.reader(csvfile, delimiter = ',')
         
@@ -25,21 +31,20 @@ with open(os.path.join("PyBank/Analysis", "main.txt"), 'w') as file:
             proflos.append(int(row[1]))
         
         tot_months = len(months)
-        #print(tot_months)
+        #print(tot_months) --> to check
 
         tot_proflos = sum(proflos)
-        #print(tot_proflos)
-
-        print('Financial Analysis')
-        print('----------------------------------')
+        #print(tot_proflos) --> to check
+    
         print('Total Months: ' + str(tot_months))
         print('Total: $' + str(tot_proflos))
     
-
+    ##
     file.write(f'Total Months: ' + str(tot_months) + '\n')
 
     file.write(f'Total: $' + str(tot_proflos) + '\n')
    
+
     with open(budget_csv, 'r') as csvfile:
         budget_data = csv.reader(csvfile, delimiter = ',')
         
