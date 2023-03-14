@@ -14,13 +14,13 @@ proflos_change = []
 #create and write into a text file, main.txt, in the "Analysis" folder
 with open(os.path.join("PyBank/Analysis", "main.txt"), 'w') as file:
     
-    #lines 18-22 are for setting the header, and for printing into terminal and writing into 'main.txt'
+    #lines 18-21 are for setting the header, and for printing into terminal and writing into 'main.txt'
     file.write(f'Financial Analysis \n')
     print('Financial Analysis')
     file.write(f'---------------------------------- \n')
     print('----------------------------------')
 
-    #lines 22 - 40 are for finding total months and profit/loss total, then printing into terminal
+    #lines 24 - 40 are for finding total months and profit/loss total, then printing into terminal
     with open(budget_csv, 'r') as csvfile:
         budget_data = csv.reader(csvfile, delimiter = ',')
         
